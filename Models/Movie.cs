@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.Contracts;
+using MovieList.Models;
 using MovieListApp.Models;
 
 namespace MovieListApp.Models
@@ -16,5 +17,8 @@ namespace MovieListApp.Models
         [Required(ErrorMessage ="Please eater a rating.")]
         [Range(1, 5, ErrorMessage ="Rating must be between 1 and 5.")]
         public int? Rating { get; set; }
+        [Required(ErrorMessage = "Please enter a genre.")]
+        public string GenreId { get; set; }
+        public Genre Genre { get; set; }
     }
 }
